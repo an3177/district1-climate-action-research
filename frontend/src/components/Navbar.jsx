@@ -1,8 +1,15 @@
-function NavBar(){
-    return (
+function Navbar() {
+  return (
+    <header class="nav-content">
+        <div classnName="title-section">
+            <h2>
+                Alameda County District 1 Climate Action Research
+            </h2>
+            <h4>
+                Which District 1 cities are leading or lagging in climate action?
+            </h4>
+        </div>
         <nav>
-            <h2>Alameda County District 1 Climate Action Research</h2>
-
             <div>
                 <a href="/">Overview</a>
                 <a href="/results">Results and Analysis</a>
@@ -10,7 +17,8 @@ function NavBar(){
                 <a href="/references">References</a>
             </div>
         </nav>
-    )
+    </header>
+  );
 }
 
-export default NavBar;
+export default Navbar;

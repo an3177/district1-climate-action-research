@@ -3,14 +3,21 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <h1>
-      Alameda County District 1Climate Action Dashboard
-    </h1>
+    <div>
+      <Navbar />
+      <main>
+          <h1>
+          Overview
+        </h1>
+      </main>
+      <Footer />
+    </div>
   )
 }
 
