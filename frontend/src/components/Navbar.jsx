@@ -1,7 +1,9 @@
+import {Link} from 'react-router-dom'
+
 function Navbar() {
   return (
-    <header class="nav-content">
-        <div classnName="title-section">
+    <header className="nav-content">
+        <div className="title-section">
             <h2>
                 Alameda County District 1 Climate Action Research
             </h2>
@@ -10,12 +12,10 @@ function Navbar() {
             </h4>
         </div>
         <nav>
-            <div>
-                <a href="/">Overview</a>
-                <a href="/results">Results and Analysis</a>
-                <a href="/recommendations">Recommendations</a>
-                <a href="/references">References</a>
-            </div>
+            <Link to="/">Overview</Link>
+            <Link to="/results">Results and Analysis</Link>
+            <Link to="/recommendations">Recommendations</Link>
+            <Link to="/references">References</Link>
         </nav>
     </header>
   );

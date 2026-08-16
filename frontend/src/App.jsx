@@ -5,6 +5,11 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Results from './pages/Results'
+import Overview from './pages/Overview'
+import Recommendations from './pages/Recommendations'
+import References from './pages/References'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
   const [climateData, setClimateData] = useState([])
@@ -17,24 +22,15 @@ function App() {
 
   return (
     <div>
-      {climateData.map((city) => (
-        <div key={city.city}>
-          <h2>{city.city}</h2>
-          <p>Average Rank: {city.average_rank}</p>
-          <p>Tier: {city.tier}</p>
-        </div>
-      ))
-      }
-    </div>
-    /*<div>
       <Navbar />
-      <main>
-          <h1>
-          Overview
-        </h1>
-      </main>
+      <Routes>
+        <Route path="/" element={<Overview />} />
+        <Route path="/results" element={<Results />} />
+        <Route path="/references" element={<References />} />
+        <Route path="/recommendations" element={<Recommendations />} />
+      </Routes>
       <Footer />
-    </div>*/
+    </div>
   )
 }
 
