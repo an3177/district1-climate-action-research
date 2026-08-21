@@ -1,0 +1,15 @@
+city,ghg_per_capita_current,ghg_per_capita_baseline,data_year,baseline_year,city_target_pct,target_year,ghg_target_per_capita,progress_toward_target,expected_progress,on_track_own,on_track_ca,benchmark_status,cap_score,cap_reasoning,actions_total,actions_complete,actions_underway,actions_delayed,cap_strong,completion_rate,ev_per_capita,goal_per_capita,percent_of_ev_goal,heat_pump_per_cap,heat_pump_above_threshold,tree_canopy_coverage_percent,canopy_above_threshold,ghg_normalized,ev_normalized,hp_normalized,cap_normalized,canopy_normalized,ghg_rank,ev_rank,cap_rank,hp_rank,canopy_rank,average_rank,tier
+Dublin,4.5,11.9,2023,1990,76.5,2030,2.8,81.32,82.5,False,True,On track for CA benchmark only,4.0,"Live interactive CAP implementation dashboard published
+          at cap.rinconconsultants.com/Dublin tracking individual measure status in
+          real time. Only has 1 completed action and the rest are ongoing and no separate progress report.
+      ",106,1,105,0,True,0.94,35.59,269.21,13.22,0.68,True,10,False,0.8131999999999999,0.1322,0.1,0.75,0.0,1.0,2.0,2.0,3.0,4.0,2.4,Moderate
+Fremont,4.542,5.896,2023,2005,55.0,2030,2.65,41.71,72.0,False,True,On track for CA benchmark only,3.5,"Interactive dashboard at https://www.fremont.gov/government/citywide-initiatives/data-dashboards/climate-action 
+          showing some things that have been done including evs registered, trees planted, and pounds of food recovered by fremont
+          organizations but is mainly about community outcomes not implementation status. No progress report and does not show specific actions that have been completed.",0,0,0,0,False,,25.0,260.36,9.6,0.52,False,14,False,0.4171,0.096,0.0,0.625,0.3636363636363635,4.0,4.0,3.5,4.0,2.0,3.5,Lagging
+Livermore,5.7,9.62,2023,1990,68.0,2030,3.08,59.94,82.5,False,True,On track for CA benchmark only,4.5,"Live interactive CAP implementation dashboard published at cap.rinconconsultants.com/Livermore
+              tracking individual measure status in real time however I assume it hasn't pee updated in a long time since there is only one completed action.
+              The 2025 Climate Action Plan Progress Report documents implemented actions (e.g., EV charging, rooftop solar, bike lanes, tree planting, and compost distribution),
+              reports current implementation activities, and evaluates progress toward the City's greenhouse gas reduction targets. Unclear if actions fully meet CAP requirements.",89,1,0,88,True,1.12,26.66,263.18,10.13,2.12,True,13,False,0.5993999999999999,0.1013,1.0000000000000002,0.875,0.2727272727272727,3.0,3.0,1.0,1.0,3.0,2.2,Moderate
+Pleasanton,6.541,13.7,2023,1990,70.0,2030,4.11,74.65,82.5,False,False,Behind on both,3.5,"Tracking table is available but is not available to the public.
+            City has a ""strategic plan"" report which gives some basis of CAP actions that are
+            completed but only a handful of the strategies are CAP-related and not overall cap progress. ",0,0,0,0,False,,37.51,263.62,14.23,1.18,True,21,True,0.7465,0.1423,0.4124999999999999,0.625,1.0,2.0,1.0,3.5,2.0,1.0,1.9,Leading
