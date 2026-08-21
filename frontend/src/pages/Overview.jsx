@@ -1,17 +1,21 @@
-import useClimateData from '../hooks/UseClimateData'
+import useClimateCities from '../hooks/UseClimateCities'
 
 function Overview() {
-    const {
-        climateData,
-        dublin,
-        fremont,
-        livermore,
-        pleasanton
-    } = useClimateData();
+    const { cities } = useClimateCities();
 
-    if (!climateData.length){
+    const cityLookup = Object.fromEntries(
+        cities.map((city) => [city.city.toLowerCase(), city])
+    );
+
+    const dublin = cityLookup.dublin || {};
+    const fremont = cityLookup.fremont || {};
+    const livermore = cityLookup.livermore || {};
+    const pleasanton = cityLookup.pleasanton || {};
+
+    if (!cities.length) {
         return <p>Loading climate data</p>;
     }
+
     return (
         <main>
             <div className="overview-content">
@@ -59,7 +63,7 @@ function Overview() {
 
                 <div className="overlap-card">
                     <img src="images/blue copy.jpg" alt="Normalization Image" width="400" height="300"/>
-                    <div class="card">
+                    <div className="card">
                         <h2>Normalization</h2>
                         <p>The metrics are normalized using methods appropriate to each dataset: GHG reduction and EV infrastructure are measured as progress toward each city's target, Climate Action Plan scores are normalized with the formula (score − 1) / 4, and tree canopy coverage and heat pump adoption are normalized relative to the other cities. The normalized scores are then ranked independently to produce the final comparisons. The cities are then categorized into "Leading," "Moderate," and "Lagging," based on their average rank.</p>
                     </div>
@@ -73,7 +77,7 @@ function Overview() {
                         <td>
                             <ul>
                                 <li>
-                                    Leads on tree canopy coverage ({pleasanton.tree_canopy_coverage}%) and heat pump adoption ({pleasanton.heat_pump_per_cap} per capita).
+                                    Leads on tree canopy coverage ({pleasanton.tree_canopy_coverage_percent}%) and heat pump adoption ({pleasanton.heat_pump_per_cap} per capita).
                                 </li>
                                 <li>
                                     However, it is the only city currently above California's 6.0 MT per capita GHG benchmark at {pleasanton.ghg_per_capita_current.toFixed(2)} MT.

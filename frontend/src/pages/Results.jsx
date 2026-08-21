@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import useClimateData from '../hooks/UseClimateData'
+import useClimateCities from '../hooks/UseClimateCities'
 
 function CollapsibleSection ({title, children}){
     const [openSection, setOpenSection] = useState(false)
@@ -18,15 +18,18 @@ function CollapsibleSection ({title, children}){
 }
 
 function Results() {
-    const {
-        climateData,
-        dublin,
-        fremont,
-        livermore,
-        pleasanton
-    } = useClimateData();
+    const { cities } = useClimateCities();
 
-    if (!climateData.length){
+    const cityLookup = Object.fromEntries(
+        cities.map((city) => [city.city.toLowerCase(), city])
+    );
+
+    const dublin = cityLookup.dublin || {};
+    const fremont = cityLookup.fremont || {};
+    const livermore = cityLookup.livermore || {};
+    const pleasanton = cityLookup.pleasanton || {};
+
+    if (!cities.length) {
         return <p>Loading climate data</p>;
     }
 
@@ -69,7 +72,7 @@ function Results() {
                     <h3>GHG Emissions Analysis</h3>
                     <div className="chart-container">
                         <img src="charts/ghg_analysis.png" alt="GHG Emissions Analysis Chart" height="400" />
-                        {climateData.length > 0 ? (
+                        {cities.length > 0 ? (
                             <p>
                                 Dublin leads in progression, having achieved {dublin.progress_toward_target}% of its goal already,
                                 while the expectation is {dublin.expected_progress}%, making it very likely the city will meet its goal soon.
@@ -91,7 +94,7 @@ function Results() {
                     <h3>Heat Pump Adoption Analysis</h3>
                     <div className="chart-container">
                         <img src="charts/heat_pump_adoption.png" alt="Heat Pump Adoption Analysis Chart" height="400" />
-                        {climateData.length > 0 ? (
+                        {cities.length > 0 ? (
                             <p>
                                 Livermore leads significantly at {livermore.heat_pump_per_cap} installations per 10,000 residents.
                                 Dublin and Pleasanton follow with {dublin.heat_pump_per_cap}{" "}
@@ -115,7 +118,7 @@ function Results() {
                     <h3>EV Infrastructure Progress</h3>
                     <div className="chart-container">
                         <img src="charts/ev_infrastructure_chart.png" alt="EV Infrastructure Progress Chart" height="400" />
-                        {climateData.length > 0 ? (
+                        {cities.length > 0 ? (
                             <p>
                                 From the data, all four District 1 cities are shown to be severely
                                 behind the suggested 2030 benchmark, which shows the most consistent
@@ -140,7 +143,7 @@ function Results() {
                     <h3>Tree Canopy Coverage</h3>
                     <div className="chart-container">
                         <img src="charts/tree_canopy_chart.png" alt="Tree Canopy Coverage Chart" height="400" />
-                        {climateData.length > 0 ? (
+                        {cities.length > 0 ? (
                             <p>
                                 A coverage level of 20% is set as the context benchmark for
                                 grassland cities and is a realistic target; however, higher
@@ -172,7 +175,7 @@ function Results() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {climateData.map((city) => (
+                                {cities.map((city) => (
                                     <tr key={city.city}>
                                         <td>{city.city}</td>
                                         <td>{city.cap_score}</td>

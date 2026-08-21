@@ -11,14 +11,6 @@ import References from './pages/References'
 import { Routes, Route } from 'react-router-dom'
 
 function App() {
-  const [climateData, setClimateData] = useState([])
-
-  useEffect(() => {
-    fetch('http://localhost:8000/climate-data')
-      .then((response) => response.json())
-      .then((data) => setClimateData(data))
-  }, [])
-
   return (
     <>
       <Navbar />
