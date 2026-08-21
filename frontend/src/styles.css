@@ -1,3 +1,5 @@
+
+
 body {
     margin: 0;
     text-align: center;
@@ -102,6 +104,7 @@ nav a:hover{
     max-width: 75rem;
     border-collapse: collapse;
     margin: 0 auto;
+    margin-bottom: 1.5rem;
     border: 1px solid #780000;
     background-color: white;;
 }
@@ -179,26 +182,28 @@ footer p{
     padding: 0.5rem;
 }
 
-.chart-header{
-   cursor: default;
-}
-.analysis-content{
-    transition:
-        max-height .6s ease,
-        opacity .4s ease,
-        padding .4s ease;
-
+.chart-header {
+    padding: 1rem 1.25rem;
+    cursor: pointer;
 }
 
-.analysis-content p{
+.analysis-content {
+    padding: 1.25rem;
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+    overflow: hidden;
+}
+
+.analysis-content p {
     text-align: left;
 }
 
-.details{
-    padding: 0.5rem 1rem;
+.details {
     width: 80%;
     margin: 2rem auto;
     background-color: white;
+    border: 1px solid #780000;
+    border-radius: 0.75rem;
+    overflow: hidden;
 }
 
 .results-content .details:hover{

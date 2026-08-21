@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import useClimateData from '../hooks/UseClimateData'
 
 function CollapsibleSection ({title, children}){
     const [openSection, setOpenSection] = useState(false)
@@ -17,19 +18,17 @@ function CollapsibleSection ({title, children}){
 }
 
 function Results() {
-    const [climateData, setClimateData] = useState([])
+    const {
+        climateData,
+        dublin,
+        fremont,
+        livermore,
+        pleasanton
+    } = useClimateData();
 
-    useEffect(() => {
-        fetch('http://localhost:8000/climate-data')
-            .then((response) => response.json())
-            .then((data) => setClimateData(data))
-            .catch((error) => console.error('Failed to load climate data', error))
-    }, [])
-
-    const dublin = climateData.find((city) => city.city === "Dublin")
-    const fremont = climateData.find((city) => city.city === "Fremont")
-    const livermore = climateData.find((city) => city.city === "Livermore")
-    const pleasanton = climateData.find((city) => city.city === "Pleasanton")
+    if (!climateData.length){
+        return <p>Loading climate data</p>;
+    }
 
     return (
         <main>
