@@ -11,7 +11,7 @@ app = FastAPI(
     title="District 1 Climate Action Research Website",
 )
 
-df = pd.read_csv("backend/district1_climate_ranked.csv")
+df = pd.read_csv("district1_climate_ranked.csv")
 
 allowed_origins = os.getenv("ALLOWED_ORIGINS", "").split(",")
 
